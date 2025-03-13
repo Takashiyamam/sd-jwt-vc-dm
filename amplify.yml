@@ -3,10 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install # Or yarn install
+        - npm install
     build:
       commands:
-        - npm run build # Or yarn build
+        - npm run build
   artifacts:
     baseDirectory: examples/nextjs-playground/.next
     files:
@@ -16,15 +16,15 @@ frontend:
       - node_modules/**/*
 applications:
   - frontend:
+      appRoot: examples/nextjs-playground # Add this line!
       phases:
         preBuild:
           commands:
-            - cd examples/nextjs-playground
             - npm install
         build:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: examples/nextjs-playground/.next
+        baseDirectory: .next
         files:
           - '**/*'
