@@ -3,14 +3,28 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install # or yarn install
+        - npm install # Or yarn install
     build:
       commands:
-        - npm run build # or yarn build
+        - npm run build # Or yarn build
   artifacts:
-    baseDirectory: .next
+    baseDirectory: examples/nextjs-playground/.next
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - cd examples/nextjs-playground
+            - npm install
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: examples/nextjs-playground/.next
+        files:
+          - '**/*'
