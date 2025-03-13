@@ -16,7 +16,7 @@ frontend:
       - node_modules/**/*
 applications:
   - frontend:
-      appRoot: examples/nextjs-playground # Add this line!
+      appRoot: "examples/nextjs-playground" # Added quotes!
       phases:
         preBuild:
           commands:
