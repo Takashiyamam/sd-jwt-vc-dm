@@ -8,18 +8,24 @@ applications:
       phases:
         preBuild:
           commands:
-            - cd ../../
             - pwd
             - npm install -g pnpm
+            - cd ../../            
             - pnpm install
-            - pnpm build
             - cd examples/nextjs-playground/
             - pnpm install # install from root            
         build:
           commands:
+            - pwd
             - npm install -g pnpm
+            - cd ../../            
             - pnpm build
-            - ls -la
+            - ls
+            - cd examples/nextjs-playground/
+            
+            - pnpm build
+            - ls 
+            - cp -r ../../node_modules/ .next/node_modules
             - cp -r node_modules/ .next/node_modules
       artifacts:
         baseDirectory: .next
