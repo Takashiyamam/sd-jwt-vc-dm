@@ -27,7 +27,7 @@ applications:
             - pnpm build
             - ls 
             - cp -r node_modules/ .next/node_modules/
-            - cp -r ../../node_modules/.pnpm/node_modules/jades-example/ .next/node_modules/.pnpm/node_modules/jades-example/
+            - cp -r ../../node_modules/.pnpm/ .next/node_modules/.pnpm
       artifacts:
         baseDirectory: .next
         files:
