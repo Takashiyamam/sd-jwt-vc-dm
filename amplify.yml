@@ -1,4 +1,7 @@
 version: 1
+frontend:
+  environment:
+    nodejs: "20"
 applications:
   - appRoot: "examples/nextjs-playground"
     frontend:
@@ -17,7 +20,7 @@ applications:
             - npm install -g pnpm
             - pnpm build
       artifacts:
-        baseDirectory: .next
+        baseDirectory: examples/nextjs-playground/.next
         files:
           - '**/*'
       cache:
