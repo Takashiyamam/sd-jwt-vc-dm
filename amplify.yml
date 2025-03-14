@@ -5,13 +5,14 @@ applications:
       phases:
         preBuild:
           commands:
-            - npm install # install from root
+            - pnpm install # install from root
             - cd examples/nextjs-playground
-            - npm install --legacy-peer-deps #install playground dependencies.
+            - pnpm install 
         build:
           commands:
+            - pnpm install
             - cd examples/nextjs-playground
-            - npm run build
+            - pnpm run build
       artifacts:
         baseDirectory: .next
         files:
