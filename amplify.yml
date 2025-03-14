@@ -5,13 +5,10 @@ applications:
       phases:
         preBuild:
           commands:
-            - npm install # install from root
-            - cd examples/nextjs-playground
-            - npm install 
+            - pwd
+            - npm install # install from root            
         build:
           commands:
-            - npm install
-            - cd examples/nextjs-playground
             - npm run build
       artifacts:
         baseDirectory: .next
