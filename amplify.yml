@@ -7,13 +7,15 @@ applications:
           commands:
             - cd ../../
             - pwd
-            - npm install
-            - npm run build
+            - npm install -g pnpm
+            - pnpm install
+            - pnpm build
             - cd examples/nextjs-playground/
-            - npm install # install from root            
+            - pnpm install # install from root            
         build:
           commands:
-            - npm run build
+            - npm install -g pnpm
+            - pnpm build
       artifacts:
         baseDirectory: .next
         files:
