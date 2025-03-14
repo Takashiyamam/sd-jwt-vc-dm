@@ -22,7 +22,7 @@ applications:
             - ls -la
             - cp -r node_modules/ .next/node_modules
       artifacts:
-        baseDirectory: examples/nextjs-playground/.next
+        baseDirectory: .next
         files:
           - '**/*'
       cache:
