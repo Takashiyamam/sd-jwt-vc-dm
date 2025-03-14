@@ -26,7 +26,7 @@ applications:
             - pnpm build
             - cp -r node_modules/ .next/node_modules/
             - mkdir -p .next/node_modules/.pnpm/node_modules/jades-example
-            - cp -r ../../node_modules/.pnpm/node_modules/jades-example .next/node_modules/.pnpm/node_modules/jades-example
+            - cp -r ../../node_modules/.pnpm/node_modules/jades-example/ .next/node_modules/.pnpm/node_modules/jades-example/
             - cd .next/node_modules/.pnpm/node_modules/jades-example/
             - pwd
       artifacts:
