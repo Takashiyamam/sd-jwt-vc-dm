@@ -29,10 +29,12 @@ applications:
             - cp -r node_modules/ .next/node_modules/
             - mkdir -p .next/node_modules/.pnpm/node_modules/jades-example
             - cp -r ../../node_modules/.pnpm/node_modules/jades-example .next/node_modules/.pnpm/node_modules/jades-example
+            - cd .next/node_modules/.pnpm/node_modules/jades-example/jades-example
+            - pwd
       artifacts:
         baseDirectory: .next
         files:
           - '**/*'
       cache:
         paths:
-          - node_modules/**/*
+          - .next/node_modules/**/*
