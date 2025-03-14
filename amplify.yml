@@ -13,7 +13,8 @@ applications:
             - cd ../../            
             - pnpm install
             - cd examples/nextjs-playground/
-            - pnpm install # install from root            
+            - pnpm install # install from root 
+            - pnpm add eslint @eslint/eslintrc
         build:
           commands:
             - pwd
@@ -25,8 +26,8 @@ applications:
             
             - pnpm build
             - ls 
-            - cp -r ../../node_modules/ .next/node_modules
-            - cp -r node_modules/ .next/node_modules
+            - cp -r node_modules/ .next/node_modules/
+            - cp -r ../../node_modules/.pnpm/node_modules/jades-example/ .next/node_modules/.pnpm/node_modules/jades-example/
       artifacts:
         baseDirectory: .next
         files:
