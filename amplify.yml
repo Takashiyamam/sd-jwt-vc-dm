@@ -1,13 +1,16 @@
 version: 1
 applications:
-  - appRoot: "examples/nextjs-playground" # Added quotes!
+  - appRoot: "examples/nextjs-playground"
     frontend:
       phases:
         preBuild:
           commands:
-            - npm install
+            - npm install # install from root
+            - cd examples/nextjs-playground
+            - npm install --legacy-peer-deps #install playground dependencies.
         build:
           commands:
+            - cd examples/nextjs-playground
             - npm run build
       artifacts:
         baseDirectory: .next
