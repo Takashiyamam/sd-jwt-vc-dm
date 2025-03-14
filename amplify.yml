@@ -19,6 +19,8 @@ applications:
           commands:
             - npm install -g pnpm
             - pnpm build
+            - ls -la
+            - cp -r node_modules/ .next/node_modules
       artifacts:
         baseDirectory: examples/nextjs-playground/.next
         files:
