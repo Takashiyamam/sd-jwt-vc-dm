@@ -8,7 +8,7 @@ applications:
             - cd ../../
             - pwd
             - npm install
-            - npm build
+            - npm run build
             - cd examples/nextjs-playground/
             - npm install # install from root            
         build:
