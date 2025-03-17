@@ -26,18 +26,13 @@ applications:
             
             - pnpm build
             - cp -r node_modules/ .next/node_modules/
+            #
+            - find ../../ -name sd-jwt-jades
             - mkdir -p .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
             # - cp -r ../../node_modules/.pnpm/node_modules/jades-example/ .next/node_modules/.pnpm/node_modules/
             # - cp -r ../../node_modules/.pnpm/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
             # - cp -r node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
-            - cp -r ../jades-example/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
-            - find ../../ -name sd-jwt-jades
-            - cd .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
-            - ls
-            - pwd
-            - cd .next/node_modules/.pnpm/node_modules/jades-example/node_modules/sd-jwt-jades/
-            - ls
-            - pwd
+            - cp -r ../jades-example/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/            
       artifacts:
         baseDirectory: .next
         files:
