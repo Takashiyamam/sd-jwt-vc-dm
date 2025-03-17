@@ -31,6 +31,7 @@ applications:
             # - cp -r ../../node_modules/.pnpm/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
             # - cp -r node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
             - cp -r ../jades-example/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
+            - find ../../ -name sd-jwt-jades
             - cd .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
             - ls
             - pwd
