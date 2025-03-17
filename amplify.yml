@@ -13,8 +13,9 @@ applications:
             - cd ../../            
             - pnpm install
             - cd examples/nextjs-playground/
-            - pnpm install # install from root 
+            - pnpm install
             - pnpm add eslint @eslint/eslintrc
+            - pnpm add sd-jwt-vcdm
         build:
           commands:
             - pwd
@@ -27,7 +28,7 @@ applications:
             - cp -r node_modules/ .next/node_modules/
             - mkdir -p .next/node_modules/.pnpm/node_modules/jades-example
             - cp -r ../../node_modules/.pnpm/node_modules/jades-example/ .next/node_modules/.pnpm/node_modules/jades-example/
-            - cd .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
+            - cd .next/node_modules/.pnpm/node_modules/jades-example/
             - ls
             - pwd
       artifacts:
