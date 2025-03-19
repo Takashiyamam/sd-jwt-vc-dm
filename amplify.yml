@@ -10,35 +10,18 @@ applications:
           commands:
             - pwd
             - npm install -g pnpm
-            - cd ../../            
+            - cd ../../
             - pnpm install
             - cd examples/nextjs-playground/
             - pnpm install
-            - pnpm add eslint @eslint/eslintrc
-            - pnpm add sd-jwt-vcdm
+            - pnpm build
         build:
           commands:
             - pwd
             - npm install -g pnpm
-            - cd ../../            
-            - pnpm build
             - cd examples/nextjs-playground/
-            
             - pnpm build
-            - cp -r node_modules/ .next/node_modules/
-            #
-            - find ../../ -name sd-jwt-jades
-            - find ../../ -name '@sd-jwt'
-            - mkdir -p .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
-            # - cp -r ../../node_modules/.pnpm/node_modules/jades-example/ .next/node_modules/.pnpm/node_modules/
-            # - cp -r ../../node_modules/.pnpm/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
-            # - cp -r node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
-            - cp -r ../jades-example/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
-            - cp -r ../../packages/ .next/
-      artifacts:
-        baseDirectory: .next
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - .next/node_modules/**/*
+          artifacts:
+            baseDirectory: .next
+            files:
+              - '**/*'
