@@ -28,8 +28,7 @@ applications:
             - mkdir -p .next/node_modules/@eslint
             - cp -r node_modules/@eslint/eslintrc .next/node_modules/@eslint/
 
-            - cp -rd node_modules .next/node_modules # 1. for "The 'node_modules' folder is missing the 'next' dependency."
-            # - pnpm add eslint @eslint/eslintrc # 2. for "no such file or directory, stat 'sd-jwt-vc-dm/examples/nextjs-playground/.next/node_modules/@eslint/eslintrc'"
+            ##- cp -rd node_modules .next/node_modules # 1. for "The 'node_modules' folder is missing the 'next' dependency."
             - ls -la .next/node_modules/
             - ls -la .next/node_modules/@eslint/ # Verification
             - find ../../ -name eslintrc 
