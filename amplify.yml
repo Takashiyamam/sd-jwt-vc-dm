@@ -34,6 +34,7 @@ applications:
             # - cp -r ../../node_modules/.pnpm/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
             # - cp -r node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
             - cp -r ../jades-example/node_modules/sd-jwt-jades/ .next/node_modules/.pnpm/node_modules/jades-example/node_modules/
+            - cp -r ../../packages/ .next/
       artifacts:
         baseDirectory: .next
         files:
