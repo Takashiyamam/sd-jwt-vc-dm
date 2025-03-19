@@ -28,7 +28,7 @@ applications:
             # - pnpm add eslint @eslint/eslintrc # 2. for "no such file or directory, stat 'sd-jwt-vc-dm/examples/nextjs-playground/.next/node_modules/@eslint/eslintrc'"
             - ls -la .next/node_modules/
             - cp -r node_modules/@eslint/eslintrc .next/node_modules/@eslint/ # Corrected copy
-            - ls -la .next/node_modules/@eslint/eslintrc/ # Verification
+            - ls -la .next/node_modules/@eslint/ # Verification
             - find ../../ -name eslintrc            
             #- ls -la .next/node_modules/@eslint/eslintrc/
             # - find ../../ -name sd-jwt-jades
