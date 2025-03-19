@@ -27,8 +27,10 @@ applications:
             - cp -r node_modules .next/node_modules # 1. for "The 'node_modules' folder is missing the 'next' dependency."
             # - pnpm add eslint @eslint/eslintrc # 2. for "no such file or directory, stat 'sd-jwt-vc-dm/examples/nextjs-playground/.next/node_modules/@eslint/eslintrc'"
             - ls -la .next/node_modules/
+            - cp -r node_modules/@eslint/eslintrc .next/node_modules/@eslint/ # Corrected copy
+            - ls -la .next/node_modules/@eslint/eslintrc/ # Verification
             - find ../../ -name eslintrc            
-            - ls -la .next/node_modules/@eslint/eslintrc/
+            #- ls -la .next/node_modules/@eslint/eslintrc/
             # - find ../../ -name sd-jwt-jades
             # - mkdir -p .next/node_modules/sd-jwt-jades ##
             # - cp -r node_modules/sd-jwt-jades/* .next/node_modules/sd-jwt-jades/ # route.ts cannot find the module without this in Amplify
