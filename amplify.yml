@@ -13,6 +13,7 @@ applications:
             - cd ../../
             - pnpm install
             - cd examples/nextjs-playground/
+            - pnpm add eslint @eslint/eslintrc
             - pnpm install
         build:
           commands:
