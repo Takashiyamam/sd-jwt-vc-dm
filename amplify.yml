@@ -25,7 +25,8 @@ applications:
 
             - cd examples/nextjs-playground/
             - pnpm build
-            - cp -r node_modules/* .next/node_modules/ # 1. for "The 'node_modules' folder is missing the 'next' dependency."
+
+            - cp -r node_modules .next/node_modules # 1. for "The 'node_modules' folder is missing the 'next' dependency."
             - ls -la .next/node_modules/
             # - find ../../ -name sd-jwt-jades
             # - mkdir -p .next/node_modules/sd-jwt-jades ##
