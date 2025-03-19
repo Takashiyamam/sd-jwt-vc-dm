@@ -29,6 +29,7 @@ applications:
             - ls -la node_modules/@eslint/
             - rm -f .next/node_modules/@eslint/eslintrc
             #- cp -rf node_modules/@eslint/eslintrc .next/node_modules/@eslint/
+            - apt-get update && apt-get install -y rsync
             - rsync -av node_modules/@eslint/eslintrc .next/node_modules/@eslint/
 
             ##- cp -rd node_modules .next/node_modules # 1. for "The 'node_modules' folder is missing the 'next' dependency."
