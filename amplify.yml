@@ -21,7 +21,7 @@ applications:
             - npm install -g pnpm
             - cd examples/nextjs-playground/
             - pnpm build
-          artifacts:
-            baseDirectory: .next
-            files:
-              - '**/*'
+        artifacts:
+          baseDirectory: .next
+          files:
+            - '**/*'
