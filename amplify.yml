@@ -30,9 +30,9 @@ applications:
             
             - cp -rd node_modules .next/node_modules # 1. for "The 'node_modules' folder is missing the 'next' dependency."
             - ls -la .next/node_modules/
-            - ls -la .next/node_modules/@eslint/ # Verification
-            - find ../../ -name eslintrc 
-            - ls -la .next/node_modules/@eslint/eslintrc/           
+            # - ls -la .next/node_modules/@eslint/ # Verification
+            # - find ../../ -name eslintrc 
+            # - ls -la .next/node_modules/@eslint/eslintrc/           
             #- ls -la .next/node_modules/@eslint/eslintrc/
             # - find ../../ -name sd-jwt-jades
             # - mkdir -p .next/node_modules/sd-jwt-jades ##
