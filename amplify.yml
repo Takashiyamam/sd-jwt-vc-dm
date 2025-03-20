@@ -5,33 +5,28 @@ frontend:
 applications:
   - appRoot: "examples/nextjs-playground"
     frontend:
+      buildPath: '/'
       phases:
         preBuild:
           commands:
             - pwd
             - npm install -g pnpm
-            - cd ../../
             - pnpm install
             - cd examples/nextjs-playground/
-            - pnpm add eslint @eslint/eslintrc
             - pnpm install
         build:
           commands:
             - pwd
             - npm install -g pnpm
-            - cd ../../
             - pnpm build
-
             - cd examples/nextjs-playground/
             - pnpm build
 
-            - mkdir -p .next/node_modules/@eslint
-            - ls -la node_modules/@eslint/
-            - rm -f .next/node_modules/@eslint/eslintrc
+            # - mkdir -p .next/node_modules/@eslint
+            # - ls -la node_modules/@eslint/
+            # - rm -f .next/node_modules/@eslint/eslintrc
             #- cp -rf node_modules/@eslint/eslintrc .next/node_modules/@eslint/
-            - apt-get update && apt-get install -y rsync
-            - rsync -av node_modules/@eslint/eslintrc .next/node_modules/@eslint/
-
+            
             ##- cp -rd node_modules .next/node_modules # 1. for "The 'node_modules' folder is missing the 'next' dependency."
             - ls -la .next/node_modules/
             - ls -la .next/node_modules/@eslint/ # Verification
