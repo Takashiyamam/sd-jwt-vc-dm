@@ -47,13 +47,9 @@ jobs:
 
             
       - name: Build Docker image
-        if: ${{ !(github.ref == 'refs/heads/main' && github.event_name == 'push')}}
         env:
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
           IMAGE_TAG: latest
-        run: |
-            IMAGE_URI=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${ECR_REPOSITORY}:${IMAGE_TAG}
-            docker build -t $IMAGE_URI .
+        run: docker build -t test-image .
 
       - name: Verification
         run: ls -la

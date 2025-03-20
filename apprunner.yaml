@@ -4,6 +4,7 @@ build:
   commands:
     pre-build:
       - pwd
+      - ls -la
       - npm install -g pnpm
       - pnpm install
       - cd examples/nextjs-playground/
