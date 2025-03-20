@@ -12,14 +12,13 @@ applications:
             - pwd
             - npm install -g pnpm
             - pnpm install
-            - pnpm build
             - cd examples/nextjs-playground/
             - pnpm install
-            - pnpm add sd-jwt-vcdm
         build:
           commands:
             - pwd
             - npm install -g pnpm
+            - cd ../../
             - pnpm build
             - cd examples/nextjs-playground/
             - pnpm build
