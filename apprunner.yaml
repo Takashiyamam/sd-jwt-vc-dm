@@ -2,7 +2,7 @@ version: 1.0
 runtime: nodejs18
 build:
   commands:
-    pre-Build:
+    pre-build:
       - pwd
       - npm install -g pnpm
       - pnpm install
