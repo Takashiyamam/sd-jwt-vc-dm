@@ -3,7 +3,7 @@ FROM node:20-alpine3.20 AS dependencies
 
 WORKDIR /app
 RUN npm install -g pnpm
-COPY pnpm-lock.yaml ./
+# COPY pnpm-lock.yaml ./
 COPY package.json ./
 RUN pnpm --filter sd-jwt-jades install
 RUN pnpm install
