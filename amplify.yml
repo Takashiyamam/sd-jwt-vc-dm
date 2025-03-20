@@ -14,6 +14,7 @@ applications:
             - pnpm install
             - cd examples/nextjs-playground/
             - pnpm install
+            - pnpm add sd-jwt-vcdm
         build:
           commands:
             - pwd
