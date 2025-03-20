@@ -4,14 +4,12 @@ build:
   commands:
     pre-Build:
       - pwd
-      - cd ../../
       - npm install -g pnpm
       - pnpm install
       - cd examples/nextjs-playground/
       - pnpm install
     build:
       - pwd
-      - cd ../../
       - pnpm build
       - cd examples/nextjs-playground/
       - pnpm build
