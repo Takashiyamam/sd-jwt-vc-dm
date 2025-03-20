@@ -49,7 +49,11 @@ jobs:
       - name: Build Docker image
         env:
           IMAGE_TAG: latest
-        run: docker build -t test-image .
+        run: |
+          pwd
+          ls -la
+          cd examples/nextjs-playground/
+          docker build -t test-image .
 
       - name: Verification
         run: ls -la
