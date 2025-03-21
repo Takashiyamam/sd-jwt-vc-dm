@@ -13,5 +13,4 @@ jobs:
         with:
           head: main # branch of original repo
           base: deployment-test # target branch of forked repo
-          auto_approve: false
-          auto_merge: false
+          auto_merge: on
