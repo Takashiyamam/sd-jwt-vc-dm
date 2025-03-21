@@ -48,3 +48,4 @@ applications:
         baseDirectory: examples/nextjs-playground/.next
         files:
           - '**/*'
+
