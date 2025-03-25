@@ -1,4 +1,4 @@
-name: Sync Fork
+name: Fork Sync 
 
 on:
   schedule: # https://help.github.com/en/actions/reference/events-that-trigger-workflows#schedule
@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: tgymnich/fork-sync@v2
         with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
           head: main # branch of original repo
-          base: deployment-test # target branch of forked repo
+          base: fork-sync-test # target branch of forked repo
           auto_merge: true
+          auto_approve: true
