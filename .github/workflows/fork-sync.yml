@@ -13,8 +13,14 @@ jobs:
     steps:
       - uses: tgymnich/fork-sync@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} ## {{ secrets.PERSONAL_TOKEN }}
+          token: ${{ secrets.PERSONAL_TOKEN }}
           head: deploy-test # branch of original repo
           base: fork-sync-test # target branch of forked repo
           auto_merge: true
           auto_approve: false
+      
+      - name: Debug Fork Sync
+        run: echo "Debugging fork-sync action"
+        env:
+          DEBUG: fork-sync
+      
