@@ -16,48 +16,49 @@ jobs:
       - name: Run Fork Sync
         uses: tgymnich/fork-sync@v2
         with:
+          token: ${{ secrets.PERSONAL_TOKEN }} 
           head: deploy-test # branch of original repo
           base: fork-sync-test # target branch of forked repo
-          auto_merge: false
+          auto_merge: true
           auto_approve: false
            
-      - name: Debug Fork Sync
-        run: echo "Debugging fork-sync action"
-        env:
-          DEBUG: fork-sync
+      # - name: Debug Fork Sync
+      #   run: echo "Debugging fork-sync action"
+      #   env:
+      #     DEBUG: fork-sync
       
-      - name: Check out repository
-        uses: actions/checkout@v4
+      # - name: Check out repository
+      #   uses: actions/checkout@v4
 
-      - name: Authenticate GitHub CLI
-        run: gh auth login --with-token <<< "${{ secrets.PERSONAL_TOKEN }}"
+      # - name: Authenticate GitHub CLI
+      #   run: gh auth login --with-token <<< "${{ secrets.PERSONAL_TOKEN }}"
 
-      - name: Debug Pull Request List
-        run: gh pr list --repo ${{ github.repository }} --state open --base fork-sync-test --json number,title,headRefName,baseRefName
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      # - name: Debug Pull Request List
+      #   run: gh pr list --repo ${{ github.repository }} --state open --base fork-sync-test --json number,title,headRefName,baseRefName
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
-      - name: Merge Pull Request
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-        run: |
-          # Fetch the pull request number for the created PR
-          PR_NUMBER=$(gh pr list --repo ${{ github.repository }} --state open --base fork-sync-test --json number -q '.[0].number')
+      # - name: Merge Pull Request
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      #   run: |
+      #     # Fetch the pull request number for the created PR
+      #     PR_NUMBER=$(gh pr list --repo ${{ github.repository }} --state open --base fork-sync-test --json number -q '.[0].number')
 
-          # Check if a pull request exists
-          if [ -z "$PR_NUMBER" ]; then
-            echo "No pull request found to merge."
-            exit 0
-          fi
+      #     # Check if a pull request exists
+      #     if [ -z "$PR_NUMBER" ]; then
+      #       echo "No pull request found to merge."
+      #       exit 0
+      #     fi
 
-          echo "Found pull request #$PR_NUMBER. Attempting to merge..."
+      #     echo "Found pull request #$PR_NUMBER. Attempting to merge..."
 
-          # Attempt to merge the pull request
-          curl -X PUT \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/merge \
-            -d '{
-              "commit_title": "Auto-merge pull request",
-              "merge_method": "merge"
-            }'
+      #     # Attempt to merge the pull request
+      #     curl -X PUT \
+      #       -H "Authorization: Bearer $GITHUB_TOKEN" \
+      #       -H "Accept: application/vnd.github+json" \
+      #       https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/merge \
+      #       -d '{
+      #         "commit_title": "Auto-merge pull request",
+      #         "merge_method": "merge"
+      #       }'
