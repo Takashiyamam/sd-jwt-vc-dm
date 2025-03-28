@@ -32,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Fetch the pull request number for the created PR
-          PR_NUMBER=$(gh pr list --state open --base fork-sync-test --json number -q '.[0].number')
+          PR_NUMBER=$(gh pr list --repo ${{ github.repository }} --state open --base fork-sync-test --json number -q '.[0].number')
 
           # Check if a pull request exists
           if [ -z "$PR_NUMBER" ]; then
