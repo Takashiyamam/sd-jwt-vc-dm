@@ -17,7 +17,7 @@ jobs:
           head: deploy-test # branch of original repo
           base: fork-sync-test # target branch of forked repo
           auto_merge: true
-          auto_approve: false
+          auto_approve: true
       
       - name: Debug Fork Sync
         run: echo "Debugging fork-sync action"
