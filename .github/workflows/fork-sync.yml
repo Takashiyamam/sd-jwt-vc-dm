@@ -16,10 +16,8 @@ jobs:
       - name: Run Fork Sync
         uses: tgymnich/fork-sync@v2
         with:
-          token: ${{ secrets.PERSONAL_TOKEN }} 
-          head: deploy-test # branch of original repo
           base: fork-sync-test # target branch of forked repo
-          auto_merge: true
+          auto_merge: false
           auto_approve: false
            
       # - name: Debug Fork Sync
