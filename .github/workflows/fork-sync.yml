@@ -26,7 +26,15 @@ jobs:
       
       - name: Check out repository
         uses: actions/checkout@v4
-  
+
+      - name: Authenticate GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Debug Pull Request List
+        run: gh pr list --repo ${{ github.repository }} --state open --base fork-sync-test --json number,title,headRefName,baseRefName
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Merge Pull Request
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
