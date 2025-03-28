@@ -9,7 +9,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write 
+      pull-requests: write
+      contents: write
+
     steps:
       - name: Run Fork Sync
         uses: tgymnich/fork-sync@v2
