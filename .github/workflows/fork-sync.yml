@@ -2,7 +2,7 @@ name: Fork Sync
 
 on:
   schedule: # https://help.github.com/en/actions/reference/events-that-trigger-workflows#schedule
-    - cron: '30 11 * * *' # Runs every day on 11:30 UTC
+    - cron: '30 11,23 * * *' # Runs every day on 11:30 UTC
   workflow_dispatch: # Allow mnual trigger
 
 jobs:
